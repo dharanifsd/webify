@@ -62,8 +62,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // For now, we'll just log or implement a simple toggle if needed
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
-            // alert('Mobile menu toggle would open a fullscreen overlay here.');
-            // Add your mobile menu logic here
+            navLinks.classList.toggle('active');
+            
+            // Toggle icon between list and x
+            const icon = mobileBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            } else {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            }
+        });
+
+        // Close menu when clicking a link
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            });
         });
     }
 });
