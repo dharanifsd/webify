@@ -36,6 +36,7 @@
 html {
     scroll-behavior: smooth;
     background-color: var(--clr-bg);
+    overflow-x: hidden;
 }
 
 body {
@@ -44,6 +45,8 @@ body {
     line-height: 1.6;
     background-color: var(--clr-bg);
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -194,12 +197,17 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-.navbar.scrolled {
+.navbar.scrolled,
+.navbar.menu-open {
     background-color: var(--clr-glass);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 1rem 0;
     border-bottom: 1px solid var(--clr-border);
+}
+
+.navbar.menu-open {
+    background-color: var(--clr-surface); /* Solid background when menu is open */
 }
 
 .nav-container {
@@ -218,6 +226,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-icon {
     color: var(--clr-primary);
+}
+
+.brand-logo {
+    height: 100px;
+    width: auto;
+}
+
+.footer .brand-logo {
+    height: 40px;
 }
 
 .nav-links {
@@ -258,6 +275,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero-container {
@@ -265,6 +283,10 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+}
+
+.hero-container > * {
+    min-width: 0;
 }
 
 .trust-badge {
@@ -281,7 +303,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
     margin-bottom: 1.5rem;
 }
 
@@ -462,6 +484,11 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    Services Section
    ========================================================================== */
+.services {
+    position: relative;
+    overflow: hidden;
+}
+
 .section-header {
     max-width: 600px;
     margin: 0 auto 4rem;
@@ -620,6 +647,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--clr-surface);
     border-top: 1px solid var(--clr-border);
     border-bottom: 1px solid var(--clr-border);
+    overflow: hidden;
 }
 
 .positioning-content {
@@ -999,5 +1027,20 @@ h1, h2, h3, h4, h5, h6 {
 
     .cta-title {
         font-size: 2rem;
+    }
+
+    .hero-ctas {
+        flex-direction: column !important;
+        width: 100%;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero-ctas .btn {
+        width: 100% !important;
+    }
+
+    .brand-logo {
+        height: 50px;
     }
 }

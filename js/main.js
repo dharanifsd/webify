@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            navbar.classList.toggle('menu-open');
             
             // Toggle icon between list and x
             const icon = mobileBtn.querySelector('i');
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                navbar.classList.remove('menu-open');
                 const icon = mobileBtn.querySelector('i');
                 icon.classList.remove('ph-x');
                 icon.classList.add('ph-list');
