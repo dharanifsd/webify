@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0A0A0A;
+  --color-secondary: #111827;
+  --color-accent: #4F46E5;
+  --color-luxury: #C9A227;
+  --color-bg-light: #FFFFFF;
+  --color-bg-muted: #F8FAFC;
+  
+  --font-heading: var(--font-satoshi), var(--font-inter), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+:root {
+  --background: var(--color-primary);
+  --foreground: var(--color-bg-light);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--color-primary); /* Forcing dark mode aesthetic as per "Premium" request */
+    --foreground: #f8fafc;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Lenis Smooth Scroll Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Typography Utilities */
+.heading-hero {
+  @apply font-heading text-[36px] sm:text-[42px] md:text-[72px] font-bold leading-tight tracking-tight;
+}
+
+.heading-section {
+  @apply font-heading text-[28px] sm:text-[32px] md:text-[48px] font-semibold leading-snug tracking-tight;
+}
+
+.text-body {
+  @apply font-sans text-[16px] md:text-[18px] leading-relaxed text-gray-300;
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+/* Signature Font */
+.font-signature {
+  font-family: var(--font-signature), cursive;
+}
