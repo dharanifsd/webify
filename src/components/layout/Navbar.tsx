@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import ContactModalTrigger from "@/components/ui/ContactModalTrigger";
+import CalendlyTrigger from "@/components/ui/CalendlyTrigger";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -53,11 +53,11 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-            <ContactModalTrigger>
+            <CalendlyTrigger>
               <button className="bg-white text-primary px-6 py-2.5 rounded-full font-medium text-sm hover:bg-gray-200 transition-colors">
-                Start Project
+                Book a Call
               </button>
-            </ContactModalTrigger>
+            </CalendlyTrigger>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -114,14 +114,14 @@ export default function Navbar() {
               </div>
 
               <div className="mt-auto">
-                <ContactModalTrigger>
+                <CalendlyTrigger>
                   <button 
                     onClick={() => setTimeout(() => setMobileMenuOpen(false), 150)}
                     className="w-full bg-white text-primary px-6 py-4 rounded-xl font-medium text-lg hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)]"
                   >
-                    Start Project
+                    Book a Call
                   </button>
-                </ContactModalTrigger>
+                </CalendlyTrigger>
               </div>
             </motion.div>
           </>
