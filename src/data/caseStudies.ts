@@ -40,7 +40,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "verdant-landscaping",
     industry: "Landscaping",
     clientName: "Verdant Outdoor Design",
-    heroImage: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1600&auto=format&fit=crop",
+    heroImage: "/landscaping.jpg",
     challenge: "Verdant relied heavily on word-of-mouth and struggled to predictably scale commercial landscaping contracts.",
     solution: "A conversion-optimized corporate portal with integrated local SEO structuring and an automated quote estimation tool.",
     longDescription: [

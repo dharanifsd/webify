@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className={`absolute top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        className={`absolute top-0 left-0 right-0 z-[60] transition-colors duration-300 ${
           scrolled ? "bg-transparent" : "bg-transparent"
         }`}
         initial={{ y: -100 }}
@@ -37,7 +37,7 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <a href="/" className="text-2xl font-heading font-bold tracking-tighter relative z-50">
+          <a href="/" className="text-2xl font-heading font-bold tracking-tighter relative z-[60] text-white">
             WEBIFY<span className="text-accent">.</span>
           </a>
 
@@ -62,7 +62,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden relative z-50 p-2 -mr-2"
+            className="md:hidden relative z-[60] p-2 -mr-2 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,30 +73,58 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-primary/95 backdrop-blur-xl flex flex-col justify-center items-center gap-8"
-          >
-            {links.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-3xl font-heading font-bold text-gray-300 hover:text-white transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="mt-8 w-[80%] max-w-xs">
-              <ContactModalTrigger>
-                <button className="w-full bg-white text-primary px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-200 transition-colors">
-                  Start Project
-                </button>
-              </ContactModalTrigger>
-            </div>
-          </motion.div>
+          <>
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+            />
+            
+            {/* Side Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 w-[75vw] max-w-[320px] z-50 bg-primary border-l border-white/10 shadow-2xl flex flex-col px-8 pt-28 pb-8 md:hidden"
+            >
+              <div className="flex flex-col gap-8">
+                {links.map((link, index) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 + index * 0.1 }}
+                  >
+                    <Link 
+                      href={link.href}
+                      onClick={() => {
+                        // Small delay to allow navigation to start before unmounting
+                        setTimeout(() => setMobileMenuOpen(false), 150);
+                      }}
+                      className="text-2xl font-heading font-semibold text-gray-300 hover:text-white hover:pl-2 transition-all block"
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-auto">
+                <ContactModalTrigger>
+                  <button 
+                    onClick={() => setTimeout(() => setMobileMenuOpen(false), 150)}
+                    className="w-full bg-white text-primary px-6 py-4 rounded-xl font-medium text-lg hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                  >
+                    Start Project
+                  </button>
+                </ContactModalTrigger>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

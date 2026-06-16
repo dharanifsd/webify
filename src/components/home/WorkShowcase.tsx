@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const projects = [
   { name: "FinTech Dashboard", category: "Web App", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" },
-  { name: "Luxury E-Commerce", category: "Website", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop" },
+  { name: "Luxury E-Commerce", category: "Website", image: "/luxury-ecommerce.png" },
   { name: "Healthcare Portal", category: "SaaS", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop" },
   { name: "AI Marketing Agent", category: "Software", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" }
 ];
