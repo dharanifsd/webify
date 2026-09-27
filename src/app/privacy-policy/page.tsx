@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Privacy Policy | Webify",
-  description: "Privacy Policy and Data Protection guidelines for Webify Digital Agency.",
+  description: "Privacy Policy and Data Protection guidelines for Webify systems.",
 };
 
 export default function PrivacyPolicy() {
@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
 
           <h2>5. Your Rights</h2>
           <p>
-            Depending on your location (e.g., GDPR, CCPA), you may have the right to access, update, or delete your personal data. If you wish to exercise these rights, please contact us at ddomverse@gmail.com.
+            Depending on your location (e.g., GDPR, CCPA), you may have the right to access, update, or delete your personal data. If you wish to exercise these rights, please contact us at ddwebify@gmail.com.
           </p>
 
           <h2>6. Changes to This Privacy Policy</h2>
@@ -65,8 +65,8 @@ export default function PrivacyPolicy() {
           <p>
             If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at:
             <br />
-            <strong>Webify Digital Agency</strong><br />
-            Email: ddomverse@gmail.com
+            <strong>Webify systems</strong><br />
+            Email: ddwebify@gmail.com
           </p>
         </div>
       </div>

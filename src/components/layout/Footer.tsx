@@ -31,7 +31,7 @@ export default function Footer() {
               <li><Link href="/#contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-heading font-semibold text-lg mb-6">Company & Social</h4>
             <ul className="space-y-4">
@@ -40,8 +40,8 @@ export default function Footer() {
                   <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">Contact Us</span>
                 </ContactModalTrigger>
               </li>
-              <li><a href="https://www.instagram.com/dd_webify/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/in/dharaniaurcm" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/webifysystems/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/dharanidev" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
             </ul>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} WEBIFY Digital Agency. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Webify Systems. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>

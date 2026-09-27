@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Terms of Service | Webify",
-  description: "Terms and Conditions governing the use of Webify Digital Agency services.",
+  description: "Terms and Conditions governing the use of Webify systems services.",
 };
 
 export default function TermsOfService() {
@@ -61,7 +61,7 @@ export default function TermsOfService() {
           <p>
             If you have any questions about these Terms, please contact us at:
             <br />
-            <strong>Email:</strong> ddomverse@gmail.com
+            <strong>Email:</strong> ddwebify@gmail.com
           </p>
         </div>
       </div>

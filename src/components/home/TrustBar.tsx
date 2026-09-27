@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function TrustBar() {
   const metrics = [
-    { value: "50+", label: "Projects Delivered" },
+    { value: "15+", label: "Projects Delivered" },
     { value: "98%", label: "Client Satisfaction" },
     { value: "10+", label: "Industries Served" },
     { value: "Enterprise", label: "Grade Development" },
@@ -13,7 +13,7 @@ export default function TrustBar() {
   return (
     <section className="py-12 border-y border-white/10 bg-white/5 backdrop-blur-sm relative z-10">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:divide-x divide-white/10">
           {metrics.map((metric, index) => (
             <motion.div
               key={index}
