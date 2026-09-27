@@ -42,7 +42,7 @@ export default function CaseStudiesCarousel({ studies }: { studies: CaseStudy[] 
 
   return (
     <div className="relative w-full max-w-7xl mx-auto">
-      <div className="flex justify-end gap-4 mb-8">
+      <div className="hidden md:flex justify-end gap-4 mb-8">
         <button 
           onClick={handlePrev}
           className="p-4 rounded-full border border-white/10 bg-primary hover:bg-white/5 transition-colors text-white group"
@@ -72,7 +72,17 @@ export default function CaseStudiesCarousel({ studies }: { studies: CaseStudy[] 
               x: { type: "spring", stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 },
             }}
-            className="absolute inset-0 w-full h-full"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(e, { offset, velocity }) => {
+              if (offset.x < -100 || velocity.x < -500) {
+                handleNext();
+              } else if (offset.x > 100 || velocity.x > 500) {
+                handlePrev();
+              }
+            }}
+            className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 h-full">
               {/* Image Side */}
