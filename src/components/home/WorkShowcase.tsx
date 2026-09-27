@@ -7,7 +7,7 @@ const projects = [
   {
     name: "FinTech Dashboard",
     category: "Web App",
-    image: "finTech.jpg",
+    image: "fintech.jpg",
   },
   {
     name: "Luxury E-Commerce",
@@ -35,13 +35,13 @@ export default function WorkShowcase() {
     if (carouselRef.current) {
       setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
     }
-    
+
     const handleResize = () => {
       if (carouselRef.current) {
         setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
       }
     };
-    
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -63,13 +63,13 @@ export default function WorkShowcase() {
       </div>
 
       <div className="pl-6 md:pl-0">
-        <motion.div 
-          ref={carouselRef} 
+        <motion.div
+          ref={carouselRef}
           className="cursor-grab active:cursor-grabbing overflow-hidden md:container md:mx-auto md:px-6 md:max-w-7xl"
         >
-          <motion.div 
-            drag="x" 
-            dragConstraints={{ right: 0, left: -width }} 
+          <motion.div
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
             dragElastic={0.1}
             dragTransition={{ bounceStiffness: 100, bounceDamping: 20 }}
             className="flex gap-6 md:gap-8 w-max"
@@ -112,7 +112,7 @@ export default function WorkShowcase() {
           </motion.div>
         </motion.div>
       </div>
-      
+
       {/* Scroll indicator for desktop */}
       <div className="container mx-auto px-6 max-w-7xl mt-12 hidden md:flex justify-end">
         <div className="flex items-center gap-4 text-gray-500 text-sm font-medium">
